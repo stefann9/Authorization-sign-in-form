@@ -5,7 +5,6 @@ export class FormAuth extends React.Component {
     const [usernameInput, passwordInput] = e.target.querySelectorAll("input");
     const { username: usernameProp, password: passwordProp } = this.props.user1;
     let authorized;
-    console.log(this.props)
     if (
       passwordProp === passwordInput.value &&
       usernameProp === usernameInput.value
@@ -14,6 +13,9 @@ export class FormAuth extends React.Component {
     } else {
       authorized = false;
     }
+
+    [usernameInput.value, passwordInput.value] = ['','']
+
     this.props.onSubmit(authorized);
   };
   render() {
