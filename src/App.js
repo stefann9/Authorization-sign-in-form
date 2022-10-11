@@ -12,18 +12,19 @@ class App extends React.Component {
       authorized: false,
     };
   }
-  handlerFormData = (data) => {
+  handlerAuthorized = (data) => {
     this.setState({ authorized: data });
   };
+  
 
   render() {
     return (
       <div className="App">
         <h1>Enter the password {this.state.authorized && "dogs"}</h1>
         {!this.state.authorized ? (
-          <FormAuth user1={this.state.user1} onSubmit={this.handlerFormData} />
+          <FormAuth user1={this.state.user1} onSubmit={this.handlerAuthorized} />
         ) : (
-          <Secret />
+          <Secret authorized={this.state.authorized} onClick={this.handlerAuthorized} />
         )}
       </div>
     );
