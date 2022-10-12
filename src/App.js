@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state = {
       user1: { username: "username", password: "pass" },
       authorized: false,
-      srcList: ''
+      srcList: "",
     };
   }
 
@@ -18,15 +18,15 @@ class App extends React.Component {
     const response = await fetch("https://dog.ceo/api/breeds/image/random/3");
     if (response.ok) {
       const responseJSON = await response.json();
-      const newImgSrc = responseJSON.message
-      console.log(newImgSrc)
+      const newImgSrc = responseJSON.message;
+      console.log(newImgSrc);
       this.setState({ srcList: newImgSrc });
     }
   };
 
   async componentDidMount() {
     this.fetchImgOnMount();
-  };
+  }
 
   handlerAuthorized = (data) => {
     this.setState({ authorized: data });
@@ -44,13 +44,12 @@ class App extends React.Component {
             />
           </div>
         ) : (
-          
           <Secret
+            user={this.state.user1.username}
             authorized={this.state.authorized}
             onClick={this.handlerAuthorized}
             srcList={this.state.srcList}
           />
-         
         )}
       </div>
     );
