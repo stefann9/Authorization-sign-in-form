@@ -8,23 +8,30 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user1: { username: "stefan", password: "ilikedogs" },
+      user1: { username: "username", password: "pass" },
       authorized: false,
     };
   }
   handlerAuthorized = (data) => {
     this.setState({ authorized: data });
   };
-  
 
   render() {
     return (
       <div className="App">
-        <h1>Enter the password {this.state.authorized && "dogs"}</h1>
         {!this.state.authorized ? (
-          <FormAuth user1={this.state.user1} onSubmit={this.handlerAuthorized} />
+          <div className="form-container">
+            <h1>Enter the password</h1>
+            <FormAuth
+              user1={this.state.user1}
+              onSubmit={this.handlerAuthorized}
+            />
+          </div>
         ) : (
-          <Secret authorized={this.state.authorized} onClick={this.handlerAuthorized} />
+          <Secret
+            authorized={this.state.authorized}
+            onClick={this.handlerAuthorized}
+          />
         )}
       </div>
     );
