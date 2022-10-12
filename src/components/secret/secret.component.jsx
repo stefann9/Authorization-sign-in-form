@@ -1,4 +1,5 @@
 import React from "react";
+import './secret.style.css'
 
 export class Secret extends React.Component {
   constructor(props) {
@@ -7,26 +8,22 @@ export class Secret extends React.Component {
       src: "",
     };
   }
- 
-  async componentDidMount() {
-    const response = await fetch("https://dog.ceo/api/breeds/image/random");
-    if (response.ok) {
-      const responseJSON = await response.json();
-      this.setState({ src: responseJSON });
-    }
-  }
+  makeImgs = () => {
+    return this.props.srcList.map((src, id) => (
+      <div className="card-image"><img key={id} src={src} alt="Random dog from dog api" /></div>
+    ));
+  };
   onClick = () => {
     this.props.onClick(false);
   };
+
   render() {
     return (
       <div className="secretInfo">
         <h1>Some important stuff</h1>
-        <div className="card-image">
-          <img src={this.state.src.message} alt="Random dog from dog api" />
-        </div>
         <button onClick={this.onClick}>Log out</button>
-      </div>
+        <div className="container-images">{this.makeImgs()}</div></div>
+      
     );
   }
 }
