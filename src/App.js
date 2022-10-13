@@ -19,7 +19,7 @@ class App extends React.Component {
     if (response.ok) {
       const responseJSON = await response.json();
       const newImgSrc = responseJSON.message;
-      console.log(newImgSrc);
+      console.log(responseJSON);
       this.setState({ srcList: newImgSrc });
     }
   };
