@@ -1,4 +1,5 @@
 import React from "react";
+import { Card } from "../card/card.component";
 
 export class ContainerCards extends React.Component {
   extractBreed = (url) => {
@@ -37,20 +38,21 @@ export class ContainerCards extends React.Component {
           const breed = this.extractBreed(src).breed;
 
           return (
-            <div key={id} className="card">
-              <div className="card-image">
-                <img src={src} alt="Random dog from dog api" />
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">{breed.toUpperCase()}</h5>
-                <a
-                  target="_blank"
-                  href={`https://www.google.com/search?q=${breed}`}
-                >
-                  See {breed} on Google
-                </a>
-              </div>
-            </div>
+            // <div key={id} className="card">
+            //   <div className="card-image">
+            //     <img src={src} alt="Random dog from dog api" />
+            //   </div>
+            //   <div className="card-body">
+            //     <h5 className="card-title">{breed.toUpperCase()}</h5>
+            //     <a
+            //       target="_blank"
+            //       href={`https://www.google.com/search?q=${breed}`}
+            //     >
+            //       See {breed} on Google
+            //     </a>
+            //   </div>
+            // </div>
+            <Card  key={id}src={src} id={id} breed={breed}/>
           );
         })}
       </div>
