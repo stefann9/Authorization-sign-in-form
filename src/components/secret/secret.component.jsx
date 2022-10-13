@@ -1,13 +1,9 @@
 import React from "react";
+import { NavbarSecret } from "../navbar-secret/navbar-secret.component";
 import "./secret.style.css";
 
 export class Secret extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     src: "",
-  //   };
-  // }
+
   extractBreed = (url) => {
     // extract breed and file name .jpg from url
     const searchTerm = "https://images.dog.ceo/breeds/";
@@ -45,10 +41,7 @@ export class Secret extends React.Component {
   render() {
     return (
       <div className="secretInfo">
-        <nav className="nav-bar">
-          <h1>Hello {this.props.user}</h1>
-          <button onClick={this.onClick}>Log out</button>
-        </nav>
+        <NavbarSecret user={this.props.user} onClick={this.onClick}/>
         <p>Here is your daily cute dog images</p>
         <div className="container-cards">{this.makeImgs()}</div>
       </div>
