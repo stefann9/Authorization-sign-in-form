@@ -47,7 +47,7 @@ img{
     text-decoration: none;
     background-color: #028aec;
     color: rgb(255, 255, 255);
-    transition:color 250ms ease-out;
+    transition: background-color 250ms ease-out;
 }
 
 .card-body a:hover{
