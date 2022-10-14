@@ -1,4 +1,5 @@
 import React from "react";
+import "./card.style.css"
 export class Card extends React.Component {
   render() {
     const breed = this.props.breed;

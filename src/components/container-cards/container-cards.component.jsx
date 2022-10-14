@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "../card/card.component";
+import "./container-cards.style.css"
 
 export class ContainerCards extends React.Component {
   extractBreed = (url) => {
