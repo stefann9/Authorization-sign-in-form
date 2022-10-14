@@ -8,9 +8,9 @@ export class Card extends React.Component {
           <img src={this.props.src} alt="Random dog from dog api" />
         </div>
         <div className="card-body">
-          <h5 className="card-title">{breed.toUpperCase()}</h5>
+          <h5 className="card-title">Breed: {breed.toUpperCase()}</h5>
           <a target="_blank" href={`https://www.google.com/search?q=${breed}`}>
-            See {breed} on Google
+            See on Google
           </a>
         </div>
       </div>
