@@ -36,13 +36,12 @@ class App extends React.Component {
     return (
       <div className="App">
         {!this.state.authorized ? (
-          <div className="form-container">
-            <h1>Enter the password</h1>
+          
             <FormAuth
               user1={this.state.user1}
               onSubmit={this.handlerAuthorized}
             />
-          </div>
+          
         ) : (
           <Secret
             user={this.state.user1.username}

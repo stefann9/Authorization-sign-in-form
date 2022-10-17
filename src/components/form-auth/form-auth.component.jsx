@@ -1,4 +1,5 @@
 import React from "react";
+import "./form-auth.style.css";
 
 export class FormAuth extends React.Component {
   onSubmit = (e) => {
@@ -14,17 +15,28 @@ export class FormAuth extends React.Component {
       authorized = false;
     }
 
-    [usernameInput.value, passwordInput.value] = ['','']
+    [usernameInput.value, passwordInput.value] = ["", ""];
 
     this.props.onSubmit(authorized);
   };
   render() {
     return (
-      <form action="#" onSubmit={this.onSubmit}>
-        <input type="text" placeholder="username" />
-        <input type="password" placeholder="password" />
-        <button>Sign in</button>
-      </form>
+      <div className="form-container ">
+        <h1>Enter the password</h1>
+        <form action="#" onSubmit={this.onSubmit}>
+          <div className="inputbox">
+            <input id="username" type="text"  required="required"/>
+            <span>Username</span>
+          </div>
+          <div className="inputbox">
+            <input id="password" type="password"  required="required" />
+            <span>Password</span>
+          </div>
+          <div className="inputbox">
+            <button>Sign in</button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

@@ -48,6 +48,10 @@ img{
     background-color: #028aec;
     color: rgb(255, 255, 255);
     transition: background-color 250ms ease-out;
+
+    border:2px solid #028aec00;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: 0.5rem;
 }
 
 .card-body a:hover{
@@ -56,9 +60,8 @@ img{
 .card-body a:active{
     background-color: #ffffff;
     color:#028aec;
-    border:2px solid #028aec;
-    border-bottom-left-radius: .5rem;
-    border-bottom-right-radius: 0.5rem;
+    border:1px solid #028aec;
+   
 }
 
 .card-body h5{
